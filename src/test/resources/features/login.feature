@@ -1,4 +1,4 @@
-Feature: Login
+Feature: Login registered user
 
   Background:
     Given I go to 'https://apparel-uk.local:9002/ucstorefront/en'

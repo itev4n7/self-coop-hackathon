@@ -8,9 +8,11 @@ import hackathon.epam.selfcoop.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class StepDefinitions {
+
+public class UserLoginSteps {
 
     @Given("I go to {string}")
     public void i_go_to_url(String url) {
@@ -20,7 +22,7 @@ public class StepDefinitions {
     @Given("I go to sing in page")
     public void i_go_to_sing_in_page() {
         AcceleratorPage acceleratorPage = new AcceleratorPage();
-        JavascriptClass.clickUsingJs(acceleratorPage.headerComponent.singInButton);
+        JavascriptClass.clickUsingJs(acceleratorPage.headerComponent.singInOrRegisterButton);
     }
 
     @When("I login with {string} email and {string} password")
