@@ -35,9 +35,10 @@ public class TestRunner extends AbstractTestNGCucumberTests {
     }
 
     private void start() {
-        ChromeOptions handlingSSL = new ChromeOptions();
-        handlingSSL.setAcceptInsecureCerts(true);
-        WebDriver driver = new ChromeDriver(handlingSSL);
+        ChromeOptions options = new ChromeOptions();
+        options.setAcceptInsecureCerts(true);
+        options.addArguments("--headless");
+        WebDriver driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriverWrapper.setDriver(driver);

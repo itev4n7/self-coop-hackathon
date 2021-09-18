@@ -1,5 +1,6 @@
 package hackathon.epam.selfcoop.steps;
 
+import hackathon.epam.selfcoop.common.JavascriptClass;
 import hackathon.epam.selfcoop.components.UserHeaderComponent;
 import hackathon.epam.selfcoop.customwebdrivers.WebDriverWrapper;
 import hackathon.epam.selfcoop.pages.AcceleratorPage;
@@ -7,9 +8,7 @@ import hackathon.epam.selfcoop.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import org.testng.Assert;
-
 
 public class StepDefinitions {
 
@@ -21,7 +20,7 @@ public class StepDefinitions {
     @Given("I go to sing in page")
     public void i_go_to_sing_in_page() {
         AcceleratorPage acceleratorPage = new AcceleratorPage();
-        acceleratorPage.headerComponent.singInButton.click();
+        JavascriptClass.clickUsingJs(acceleratorPage.headerComponent.singInButton);
     }
 
     @When("I login with {string} email and {string} password")
@@ -29,13 +28,13 @@ public class StepDefinitions {
         LoginPage loginPage = new LoginPage();
         loginPage.emailField.sendKeys(email);
         loginPage.passwordField.sendKeys(password);
-        loginPage.submitButton.click();
+        JavascriptClass.clickUsingJs(loginPage.submitButton);
     }
 
     @Then("I see that i logged in")
     public void i_see_that_i_logged_in() {
+        String myAccountText = "My Account";
         UserHeaderComponent userHeaderComponent = new UserHeaderComponent();
-        boolean isVisible = userHeaderComponent.myAccountButton.isDisplayed();
-        Assert.assertTrue(isVisible);
+        Assert.assertEquals(userHeaderComponent.myAccountButton.getAttribute("innerText"), myAccountText);
     }
 }
