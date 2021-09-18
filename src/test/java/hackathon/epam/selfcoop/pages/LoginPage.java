@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 
-    public HeaderComponent headerComponent = new HeaderComponent();
-
     public WebElement emailField = WebDriverWrapper.getDriver().findElement(By.cssSelector("#j_username"));
 
     public WebElement passwordField = WebDriverWrapper.getDriver().findElement(By.cssSelector("#j_password"));

@@ -13,7 +13,6 @@ import org.testng.Assert;
 
 
 public class UserLoginSteps {
-
     @Given("I go to {string}")
     public void i_go_to_url(String url) {
         WebDriverWrapper.getDriver().navigate().to(url);
@@ -35,7 +34,7 @@ public class UserLoginSteps {
 
     @Then("I see that i logged in")
     public void i_see_that_i_logged_in() {
-        String myAccountText = "My Account";
+        String myAccountText = "MY ACCOUNT";
         UserHeaderComponent userHeaderComponent = new UserHeaderComponent();
         Assert.assertEquals(userHeaderComponent.myAccountButton.getAttribute("innerText"), myAccountText);
     }

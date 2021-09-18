@@ -7,5 +7,7 @@ import org.openqa.selenium.WebElement;
 public class HeaderComponent {
     public WebElement singInOrRegisterButton = WebDriverWrapper.getDriver().findElement(By.cssSelector("[href='/ucstorefront/en/login']"));
 
-    public WebElement snowNavigationHeader = WebDriverWrapper.getDriver().findElement(By.cssSelector("[href='/ucstorefront/en/Collections/Snow/c/snow']"));
+    public WebElement youthNavigationHeader = WebDriverWrapper.getDriver().findElement(By.cssSelector("a[title='Youth']"));
+
+    public WebElement dcProductButton = WebDriverWrapper.getDriver().findElement(By.cssSelector("a[title='DC']"));
 }
