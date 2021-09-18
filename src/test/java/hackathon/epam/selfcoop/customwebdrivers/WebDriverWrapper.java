@@ -1,12 +1,12 @@
-package customwebdrivers;
+package hackathon.epam.selfcoop.customwebdrivers;
 
 import org.openqa.selenium.WebDriver;
 
-public class CustomWebDriver {
+public class WebDriverWrapper {
 
     private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-    private CustomWebDriver() {}
+    private WebDriverWrapper() {}
 
     public static void setDriver(WebDriver customDriver) {
         driver.set(customDriver);

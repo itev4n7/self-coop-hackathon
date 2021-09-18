@@ -3,7 +3,7 @@
 <suite name="Practice Suite">
     <test name="Test Google Search">
         <classes>
-            <class name="hackathon.epam.selfcoop.RunCucumberTest"/>
+            <class name="hackathon.epam.selfcoop.runners.TestRunner"/>
         </classes>
     </test>
 </suite>

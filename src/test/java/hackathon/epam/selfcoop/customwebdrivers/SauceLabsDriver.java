@@ -1,4 +1,4 @@
-package customwebdrivers;
+package hackathon.epam.selfcoop.customwebdrivers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,13 +20,13 @@ public class SauceLabsDriver {
                     URI.create("link").toURL(),
                     capabilities
             );
-            CustomWebDriver.setDriver(driver);
+            WebDriverWrapper.setDriver(driver);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e.getMessage());
         }
     }
 
     public static void tearDown() {
-        CustomWebDriver.getDriver().quit();
+        WebDriverWrapper.getDriver().close();
     }
 }

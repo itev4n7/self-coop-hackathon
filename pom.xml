@@ -13,6 +13,7 @@
         <selenium.version>3.141.59</selenium.version>
         <testng.version>7.4.0</testng.version>
         <cucumber.version>6.11.0</cucumber.version>
+        <pipocli.version>4.6.1</pipocli.version>
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <maven.surefire.version>2.22.2</maven.surefire.version>
         <java.version>13</java.version>
@@ -56,6 +57,12 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
             <version>${cucumber.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>info.picocli</groupId>
+            <artifactId>picocli</artifactId>
+            <version>${pipocli.version}</version>
         </dependency>
 
     </dependencies>
