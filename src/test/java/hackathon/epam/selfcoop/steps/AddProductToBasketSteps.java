@@ -10,6 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 
 public class AddProductToBasketSteps {
     WebDriver driver = WebDriverWrapper.getDriver();
@@ -36,8 +37,9 @@ public class AddProductToBasketSteps {
 
     @Then("I see selected product is shown in the basket page")
     public void iSeeSelectedProductIsShownInTheBasketPage() {
-        String orderTotal = "Order Total";
+        String orderTotal = "1 Items";
         BasketComponent basket = new BasketComponent();
-        JavascriptClass.clickUsingJs(basket.checkOutToBasket);
+        JavascriptClass.clickUsingJs(basket.closeShoppingBagButton);
+        Assert.assertEquals(basket.itemQuantity.getAttribute("innerText"), orderTotal);
     }
 }

@@ -34,7 +34,7 @@ public class UserLoginSteps {
 
     @Then("I see that i logged in")
     public void i_see_that_i_logged_in() {
-        String myAccountText = "MY ACCOUNT";
+        String myAccountText = "My Account";
         UserHeaderComponent userHeaderComponent = new UserHeaderComponent();
         Assert.assertEquals(userHeaderComponent.myAccountButton.getAttribute("innerText"), myAccountText);
     }
